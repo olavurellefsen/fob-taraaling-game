@@ -102,10 +102,8 @@ class App extends React.Component {
             <>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <FlexContainer>
-                  <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
-                </FlexContainer>
-                <FlexContainer>
                   <FlexColumn >
+                  <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
                     <Dropzone
                       id={COMICS.products}
                       heroes={this.state[COMICS.products]}
@@ -120,7 +118,6 @@ class App extends React.Component {
                       gameState={gameState}
                     />
                   </FlexColumn>
-
                 </FlexContainer>
               </DragDropContext>
               <Highscore />
@@ -140,7 +137,7 @@ class App extends React.Component {
 
 const FlexContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   align-self: stretch;
@@ -148,7 +145,9 @@ const FlexContainer = styled.div`
 
 const FlexColumn = styled.div`
   display: flex;
-  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;

@@ -8,12 +8,12 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
 
   return (
     <HeroContainerStyle>
-      <div style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>
       {endGame && heroes.length === 0 && (
         <button className="btn btn-default" onClick={endGame}>
           Enda spælið
         </button>
       )}
+      <div style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>
       <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
         {(provided) => {
           return (
@@ -53,11 +53,13 @@ const Hero = ({ name, color, rank, description, comics, index, gameState,
             {...provided.draggableProps}
             {...provided.dragHandleProps}
           >
-            <TextStyle onClick={() => {
-              setSelectedHero(name)
-            }} title={description} className="tile-content">
-              {name}
-            </TextStyle>
+            <img
+              src={`./hero_icons/${name
+                .toLowerCase()
+                .replaceAll(' ', '_')}.png`}
+              alt={name}
+              style={{ height: "125px" }}
+            />
             {gameState === "review" &&
               <PopupHero name={name} rank={rank} description={description}
                 selectedHero={selectedHero} setSelectedHero={setSelectedHero}
@@ -72,24 +74,19 @@ const Hero = ({ name, color, rank, description, comics, index, gameState,
 const HeroContainerStyle = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 430px;
   margin: 20px;
 `
+
 const HeroStyle = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 20px;
-  border: dotted black 1px;
-`
-
-const TextStyle = styled.div`
-  color: black;
+  img {
+    height: 70px;
+  }
 `
 
 const HeroSubContainerStyle = styled.div`
+  flex-direction: row;
 `
 export default Dropzone
