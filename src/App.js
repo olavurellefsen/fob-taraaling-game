@@ -57,7 +57,7 @@ class App extends React.Component {
     }
     if (this.state.gameState === GAME_STATE.PLAYING) {
       this.setState({
-        gameState: GAME_STATE.REVIEW
+        gameState: GAME_STATE.DONE
       });
     } else {
       this.setState({
