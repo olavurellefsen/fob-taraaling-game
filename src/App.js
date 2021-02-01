@@ -57,7 +57,7 @@ class App extends React.Component {
     }
     if (this.state.gameState === GAME_STATE.PLAYING) {
       this.setState({
-        gameState: GAME_STATE.REVIEW
+        gameState: GAME_STATE.DONE
       });
     } else {
       this.setState({
@@ -101,9 +101,19 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.DONE) && (
             <>
               <DragDropContext onDragEnd={this.onDragEnd}>
+              <SuperContainer>
+              <Container>
+              <Title>Óflokkað</Title>
                 <FlexContainer>
                   <FlexColumn >
                   <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
+                  </FlexColumn>
+                </FlexContainer>
+                </Container>
+                <Container>
+              <Title>Vørur</Title>
+                <FlexContainer>
+                  <FlexColumn >
                     <Dropzone
                       id={COMICS.products}
                       heroes={this.state[COMICS.products]}
@@ -111,6 +121,13 @@ class App extends React.Component {
                       gameState={gameState}
 
                     />
+                  </FlexColumn>
+                </FlexContainer>
+                </Container>
+                <Container>
+              <Title>Tænastur</Title>
+                <FlexContainer>
+                  <FlexColumn >
                     <Dropzone
                       id={COMICS.services}
                       heroes={this.state[COMICS.services]}
@@ -119,6 +136,8 @@ class App extends React.Component {
                     />
                   </FlexColumn>
                 </FlexContainer>
+                </Container>
+                </SuperContainer>
               </DragDropContext>
               <Highscore />
             </>
@@ -135,22 +154,41 @@ class App extends React.Component {
   }
 }
 
+const SuperContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  align-self: center;
+`
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-self: center;
+`
 const FlexContainer = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: row;
+  margin: 0 30px;
   align-self: stretch;
+`
+
+const Title = styled.div`
+  display: flex;
+  align-self: center;
+  font-weight: bold;
 `
 
 const FlexColumn = styled.div`
   display: flex;
-  align-self: stretch;
-  width: 100%;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 0 20px;
+  height: 90vh;
+  overflow-y: auto;
 `
 
 export default App;

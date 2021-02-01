@@ -13,8 +13,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
           Enda spælið
         </button>
       )}
-      <div style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>
-      <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
+      <Droppable  droppableId={id} isDropDisabled={isDropDisabled}>
         {(provided) => {
           return (
             <HeroSubContainerStyle
@@ -73,14 +72,17 @@ const Hero = ({ name, color, rank, description, comics, index, gameState,
 
 const HeroContainerStyle = styled.div`
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   flex-wrap: wrap;
+  width: 160px;
+  justify-content: flex-start;
   margin: 20px;
 `
 
 const HeroStyle = styled.div`
-  display: flex;
+display: flex;
+justify-content: flex-start;
+flex-direction: column;
+margin: 10px;
   img {
     height: 70px;
   }
