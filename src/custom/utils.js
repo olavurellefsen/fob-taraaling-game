@@ -21,6 +21,33 @@ export function shuffle(array) {
   return array
 }
 
+
+export function getGroupings(groups) {
+  const maxPoint = getMaxPoints()
+
+  const gameScore = Object.values(COMICS).reduce(
+    (sum, comicsName) => sum + getNumberOfGrouping(groups[comicsName], comicsName),
+    0
+  )
+  return `Tú fekst ${gameScore} bólkingar rættar út av ${maxPoint}`
+}
+
+
+export function getNumberOfGrouping(groupedHeroes, comics) {
+  const correctOrder = HEROES.filter((hero) => hero.comics === comics).sort(
+    (a, b) =>
+      a.rank < b.rank ? -1 : 1
+
+  )
+  return groupedHeroes.reduce((score, { name }, index) => {
+
+    const heroIndex = correctOrder.findIndex((hero) => hero.name === name)
+    score += heroIndex >= 0 ? + 1 : 0
+    return score
+  }, 0)
+}
+
+
 // method to handle points calculation based on sort order as well as grouping
 function calculateScore(groupedHeroes, comics) {
   const correctOrder = HEROES.filter((hero) => hero.comics === comics).sort(

@@ -22,6 +22,9 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
   const [totalScore, setTotalScore] = useState(0)
   const [timeBonus, setTimeBonus] = useState(0)
   const [score, setScore] = useState(0)
+  const [correctAnwsers, setCorrectAnswers] = useState("")
+
+
   useEffect(() => {
     const doInsertFobGame = async (groups, timeLeft) => {
       try {
@@ -44,6 +47,8 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
     setTotalScore(getTotalScore(groups, timeLeft))
     setTimeBonus(getTimeBonus(timeLeft))
     setScore(getScore(groups))
+    setCorrectAnswers(getGroupings(groups))
+
   }, [groups, timeLeft])
 
   return (
@@ -58,7 +63,7 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
             {' '}
             {gameState === GAME_STATE.READY
               ? `Hála og slepp ymsu myndirnar í tilhoyrandi kassa`
-              : `Tú fekk: ${totalScore} stig, har ið tíðsbonusið taldi ${totalScore > 0 ? timeBonus : 0} stig. Tú fekst ${score} fyri at seta myndirnar í tilhoyrandi kassa.`}
+              : `Tú fekk: ${totalScore} stig, har ið tíðsbonusið taldi ${totalScore > 0 ? timeBonus : 0} stig. Tú fekst ${score} fyri at seta myndirnar í tilhoyrandi kassa. ${correctAnwsers}. Tú spældi í ${Math.floor((4000 * 60 * 2 - timeLeft) / 1000)} sekund.`}
           </div>
         </div>
         <div className="modal-footer">
