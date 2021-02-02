@@ -172,6 +172,7 @@ const FlexContainer = styled.div`
 const Title = styled.div`
   display: flex;
   align-self: center;
+  justify-content: center;
   font-weight: bold;
 `
 

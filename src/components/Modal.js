@@ -62,7 +62,7 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
           <div className="content h6">
             {' '}
             {gameState === GAME_STATE.READY
-              ? `Hála og slepp ymsu myndirnar í tilhoyrandi kassa`
+              ? `Drag kassarnar í rætta bólkin`
               : `Tú fekk: ${totalScore} stig, har ið tíðsbonusið taldi ${totalScore > 0 ? timeBonus : 0} stig. Tú fekst ${score} fyri at seta myndirnar í tilhoyrandi kassa. ${correctAnwsers}. Tú spældi í ${Math.floor((4000 * 60 * 2 - timeLeft) / 1000)} sekund.`}
           </div>
         </div>
