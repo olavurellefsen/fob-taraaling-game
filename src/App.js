@@ -101,42 +101,37 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.DONE) && (
             <>
               <DragDropContext onDragEnd={this.onDragEnd}>
-              <SuperContainer>
-              <Container>
-              <Title>Óflokkað</Title>
-                <FlexContainer>
-                  <FlexColumn >
-                  <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
-                  </FlexColumn>
-                </FlexContainer>
-                </Container>
-                <Container>
-              <Title>Vørur</Title>
-                <FlexContainer>
-                  <FlexColumn >
-                    <Dropzone
-                      id={COMICS.products}
-                      heroes={this.state[COMICS.products]}
-                      isDropDisabled={isDropDisabled}
-                      gameState={gameState}
-
-                    />
-                  </FlexColumn>
-                </FlexContainer>
-                </Container>
-                <Container>
-              <Title>Tænastur</Title>
-                <FlexContainer>
-                  <FlexColumn >
-                    <Dropzone
-                      id={COMICS.services}
-                      heroes={this.state[COMICS.services]}
-                      isDropDisabled={isDropDisabled}
-                      gameState={gameState}
-                    />
-                  </FlexColumn>
-                </FlexContainer>
-                </Container>
+                <Title>Óflokkað</Title>
+                <Dropzone id="Óflokkað" identifier="row" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
+                <SuperContainer>
+                  <Container>
+                    <Title>Vørur</Title>
+                    <FlexContainer>
+                      <FlexColumn >
+                        <Dropzone
+                          id={COMICS.products}
+                          heroes={this.state[COMICS.products]}
+                          isDropDisabled={isDropDisabled}
+                          gameState={gameState}
+                          identifier="column"
+                        />
+                      </FlexColumn>
+                    </FlexContainer>
+                  </Container>
+                  <Container>
+                    <Title>Tænastur</Title>
+                    <FlexContainer>
+                      <FlexColumn >
+                        <Dropzone
+                          id={COMICS.services}
+                          heroes={this.state[COMICS.services]}
+                          isDropDisabled={isDropDisabled}
+                          gameState={gameState}
+                          identifier="column"
+                        />
+                      </FlexColumn>
+                    </FlexContainer>
+                  </Container>
                 </SuperContainer>
               </DragDropContext>
               <Highscore />
