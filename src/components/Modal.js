@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import gql from 'graphql-tag'
-import { GAME_STATE, getScore, getTimeBonus, getTotalScore } from '../custom/utils'
+import { GAME_STATE, getGroupings, getScore, getTimeBonus, getTotalScore } from '../custom/utils'
 import { useMutation } from '@apollo/client'
 import { useAuth0 } from '@auth0/auth0-react'
 
