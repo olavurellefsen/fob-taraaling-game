@@ -87,6 +87,7 @@ class App extends React.Component {
     return (
       <>
         <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} isUngroupedEmpty={Óflokkað.length === 0}/>
+        <TitleStyle>Drag kassarnar í rætta bólkin</TitleStyle>
         {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
             startGame={this.startGame}
@@ -185,6 +186,11 @@ const FlexColumn = styled.div`
   padding: 0 20px;
   height: 90vh;
   overflow-y: auto;
+`
+
+const TitleStyle = styled.h1`
+  text-align: center;
+  font-size: 1.2rem;
 `
 
 export default App;

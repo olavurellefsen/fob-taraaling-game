@@ -7,7 +7,6 @@ const Header = ({ timeLeft, gameState, endGame, isUngroupedEmpty }) => (
     {(gameState === GAME_STATE.PLAYING || gameState === GAME_STATE.REVIEW) && (
       <>
         <section className="navbar-center text-error">{getSeconds(timeLeft)} sekundir eftir. </section>
-        <section className="navbar-center text-success large">Drag kassarnar í rætta bólkin</section>
         <section className="navbar-center">
           {/* <LoginLogout /> */}
           {isUngroupedEmpty ?  <button className="btn btn-default" onClick={endGame}>
