@@ -18,9 +18,11 @@ mutation InsertFobGame($points: numeric!, $email: String!) {
 const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
   const [insertFobGame] = useMutation(INSERT_FOB_GAME)
   const { isAuthenticated, user } = useAuth0()
-
+// eslint-disable-next-line
   const [totalScore, setTotalScore] = useState(0)
+  // eslint-disable-next-line
   const [timeBonus, setTimeBonus] = useState(0)
+  // eslint-disable-next-line
   const [score, setScore] = useState(0)
   const [correctAnwsers, setCorrectAnswers] = useState("")
 
@@ -63,7 +65,7 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
             {' '}
             {gameState === GAME_STATE.READY
               ? `Drag kassarnar í rætta bólkin`
-              : `Tú fekk: ${totalScore} stig, har ið tíðsbonusið taldi ${totalScore > 0 ? timeBonus : 0} stig. Tú fekst ${score} fyri at seta myndirnar í tilhoyrandi kassa. ${correctAnwsers}. Tú spældi í ${Math.floor((4000 * 60 * 2 - timeLeft) / 1000)} sekund.`}
+              : `${correctAnwsers}. Tú spældi í ${Math.floor((4000 * 60 * 2 - timeLeft) / 1000)} sekund.`}
           </div>
         </div>
         <div className="modal-footer">
