@@ -57,7 +57,7 @@ class App extends React.Component {
     }
     if (this.state.gameState === GAME_STATE.PLAYING) {
       this.setState({
-        gameState: GAME_STATE.DONE
+        gameState: GAME_STATE.REVIEW
       });
     } else {
       this.setState({
@@ -86,7 +86,7 @@ class App extends React.Component {
 
     return (
       <>
-        <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} isUngroupedEmpty={Óflokkað.length === 0}/>
+        <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} isUngroupedEmpty={Óflokkað.length === 0} />
         <TitleStyle>Drag kassarnar í rætta bólkin</TitleStyle>
         {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
@@ -115,6 +115,7 @@ class App extends React.Component {
                           isDropDisabled={isDropDisabled}
                           gameState={gameState}
                           identifier="column"
+                          color="#007480"
                         />
                       </FlexColumn>
                     </FlexContainer>
@@ -129,6 +130,8 @@ class App extends React.Component {
                           isDropDisabled={isDropDisabled}
                           gameState={gameState}
                           identifier="column"
+                          color="#2fad2f"
+
                         />
                       </FlexColumn>
                     </FlexContainer>

@@ -3,11 +3,11 @@ import { Droppable, Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components'
 import PopupHero from './PopupHero'
 
-const Dropzone = ({ isDropDisabled, heroes, id, identifier, gameState }) => {
+const Dropzone = ({ isDropDisabled, heroes, id, identifier, gameState,color }) => {
   const [selectedHero, setSelectedHero] = useState("")
   return (
-    <HeroContainerStyle grouped={identifier}>
-      <Droppable  droppableId={id} isDropDisabled={isDropDisabled}>
+    <HeroContainerStyle grouped={identifier} style={{ marginTop: "20px", borderTop: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>
+      <Droppable droppableId={id} isDropDisabled={isDropDisabled} style={{ borderTop: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>
         {(provided) => {
           return (
             <HeroSubContainerStyle
@@ -33,7 +33,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, identifier, gameState }) => {
     </HeroContainerStyle>
   )
 }
-const Hero = ({ name, color, rank, description, comics, index, gameState,
+const Hero = ({ name, color, rank, description, index, gameState,
   selectedHero, setSelectedHero }) => {
   return (
     <Draggable key={index} draggableId={name} index={index}>
@@ -80,9 +80,18 @@ const HeroStyle = styled.div`
   justify-content: flex-start;
   flex-direction: row;
   margin: 10px;
+  margin-right: auto;
+  margin-left: auto;
   img {
     height: 70px;
   }
+  ${({ review, color }) =>
+    review && color &&
+    `
+    border-bottom: 5px solid ${color};
+    color: white;
+
+  `}
 `
 
 const HeroSubContainerStyle = styled.div`
