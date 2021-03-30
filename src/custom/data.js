@@ -38,7 +38,7 @@ export const HEROES = [
     name: 'Taðingarevni',
     comics: "Vørur",
     rank: 0,
-    color: "#2fad2f"
+    color: "#007480"
   },
   {
     name: 'Upptøka av føðsluevnum',
