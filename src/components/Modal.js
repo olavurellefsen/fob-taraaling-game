@@ -64,7 +64,7 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
           <div className="content h6">
             {' '}
             {gameState === GAME_STATE.READY
-              ? `Drag kassarnar í rætta bólkin`
+              ? `Drag kassarnar í rætta bólkin.`
               : `${correctAnwsers}. Tú spældi í ${Math.floor((4000 * 60 * 2 - timeLeft) / 1000)} sekund.`}
           </div>
         </div>
