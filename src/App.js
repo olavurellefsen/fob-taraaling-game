@@ -87,7 +87,7 @@ class App extends React.Component {
     return (
       <>
         <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} isUngroupedEmpty={Óflokkað.length === 0} />
-        <TitleStyle>Drag kassarnar í rætta bólkin</TitleStyle>
+        <TitleStyle>Drag kassarnar í rætta bólkin.</TitleStyle>
         {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
             startGame={this.startGame}
