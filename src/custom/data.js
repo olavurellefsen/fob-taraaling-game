@@ -47,7 +47,7 @@ export const HEROES = [
     color: "#2fad2f"
   },
   {
-    name: 'Upptøka av koltvísúrni',
+    name: 'At taka koltvísúrni til sín',
     comics: "Tænastur",
     rank: 0,
     color: "#2fad2f"
