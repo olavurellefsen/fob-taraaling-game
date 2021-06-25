@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components'
 import PopupHero from './PopupHero'
+import { media } from "../utils/mediaTemplate"
 
-const Dropzone = ({ isDropDisabled, heroes, id, identifier, gameState,color }) => {
+const Dropzone = ({ isDropDisabled, heroes, id, identifier, gameState, color }) => {
   const [selectedHero, setSelectedHero] = useState("")
   return (
     <HeroContainerStyle grouped={identifier} style={{ marginTop: "20px", borderTop: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>
@@ -72,7 +73,11 @@ const HeroContainerStyle = styled.div`
   margin: 20px;
   flex-direction: ${props => props.identifier};
   width: ${props => props.identifier === "row" ? "100%" : ""};
-
+  /* min-height: ${props => props.identifier === "row" ? "" : "300px"}; */
+  /* max-height: ${props => props.identifier === "row" ? "300px" : ""}; */
+  ${media.phone1`
+    max-height: 0;
+  `}
 `
 
 const HeroStyle = styled.div`
@@ -101,6 +106,7 @@ const HeroSubContainerStyle = styled.div`
     max-width: 505px;
     width: 100%;
     flex-wrap: wrap;
+    max-height: 300px;
   `: `
     height: 900px;
   `}

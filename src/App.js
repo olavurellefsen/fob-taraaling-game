@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import Highscore from './components/Highscore';
 import styled from 'styled-components';
 
-
 const GAME_DURATION = 4000 * 60 * 2; // 2 minutes
 
 const initialState = {
@@ -103,7 +102,6 @@ class App extends React.Component {
             <>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <Title>Óflokkað</Title>
-                <Dropzone id="Óflokkað" identifier="row" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
                 <SuperContainer>
                   <Container>
                     <Title>Vørur</Title>
@@ -120,6 +118,7 @@ class App extends React.Component {
                       </FlexColumn>
                     </FlexContainer>
                   </Container>
+                  <Dropzone id="Óflokkað" identifier="row" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
                   <Container>
                     <Title>Tænastur</Title>
                     <FlexContainer>
@@ -158,6 +157,7 @@ const SuperContainer = styled.div`
   justify-content: center;
   flex-direction:row;
   align-self: center;
+
 `
 const Container = styled.div`
   display: flex;
