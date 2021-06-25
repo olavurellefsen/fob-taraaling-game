@@ -13,9 +13,9 @@ div.menu .menu-item.tile.tile-centered {
   min-height: 330px;
 }
 
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1009px) {
   .menu.hero-list {
-    min-height: 995px;
+    min-height: 820px;
   }
 }
 
