@@ -13,11 +13,6 @@ div.menu .menu-item.tile.tile-centered {
   min-height: 330px;
 }
 
-@media all and (max-width: 1009px) {
-  .menu.hero-list {
-    min-height: 900px;
-  }
-}
 
 footer {
   position: fixed;
