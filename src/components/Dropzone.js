@@ -70,7 +70,7 @@ const HeroContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px;
+  margin: auto;
   flex-direction: ${props => props.identifier};
   width: ${props => props.identifier === "row" ? "100%" : ""};
   /* min-height: ${props => props.identifier === "row" ? "" : "300px"}; */
@@ -81,12 +81,7 @@ const HeroContainerStyle = styled.div`
 `
 
 const HeroStyle = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  margin: 10px;
-  margin-right: auto;
-  margin-left: auto;
+  height: 100px;
   img {
     height: 70px;
   }

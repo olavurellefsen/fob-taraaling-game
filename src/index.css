@@ -15,7 +15,7 @@ div.menu .menu-item.tile.tile-centered {
 
 @media all and (max-width: 1009px) {
   .menu.hero-list {
-    min-height: 820px;
+    min-height: 900px;
   }
 }
 
@@ -29,7 +29,7 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 200px;
+  /* width: 200px; */
 }
 
 .large-container {

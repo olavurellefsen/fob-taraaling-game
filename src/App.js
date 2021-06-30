@@ -101,38 +101,38 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.DONE) && (
             <>
               <DragDropContext onDragEnd={this.onDragEnd}>
-                <Title>Óflokkað</Title>
                 <SuperContainer>
                   <Container>
                     <Title>Vørur</Title>
                     <FlexContainer>
-                      <FlexColumn >
-                        <Dropzone
-                          id={COMICS.products}
-                          heroes={this.state[COMICS.products]}
-                          isDropDisabled={isDropDisabled}
-                          gameState={gameState}
-                          identifier="column"
-                          color="#007480"
-                        />
-                      </FlexColumn>
+                      <Dropzone
+                        id={COMICS.products}
+                        heroes={this.state[COMICS.products]}
+                        isDropDisabled={isDropDisabled}
+                        gameState={gameState}
+                        identifier="column"
+                        color="#007480"
+                      />
                     </FlexContainer>
                   </Container>
-                  <Dropzone id="Óflokkað" identifier="row" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
+                  <Container>
+                    <Title>Óflokkað</Title>
+                    <FlexContainer>
+                      <Dropzone id="Óflokkað" identifier="row" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
+                    </FlexContainer>
+                  </Container>
                   <Container>
                     <Title>Tænastur</Title>
                     <FlexContainer>
-                      <FlexColumn >
-                        <Dropzone
-                          id={COMICS.services}
-                          heroes={this.state[COMICS.services]}
-                          isDropDisabled={isDropDisabled}
-                          gameState={gameState}
-                          identifier="column"
-                          color="#2fad2f"
+                      <Dropzone
+                        id={COMICS.services}
+                        heroes={this.state[COMICS.services]}
+                        isDropDisabled={isDropDisabled}
+                        gameState={gameState}
+                        identifier="column"
+                        color="#2fad2f"
 
-                        />
-                      </FlexColumn>
+                      />
                     </FlexContainer>
                   </Container>
                 </SuperContainer>
@@ -155,22 +155,23 @@ class App extends React.Component {
 const SuperContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction:row;
   align-self: center;
-
 `
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction:column;
-  align-self: center;
+  align-self: flex-start;
+  margin: 0 20px;
 `
 const FlexContainer = styled.div`
   display: flex;
   align-items: flex-start;
-  flex-direction: row;
-  margin: 0 30px;
-  align-self: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-self: flex-start;
 `
 
 const Title = styled.div`
@@ -180,20 +181,11 @@ const Title = styled.div`
   font-weight: bold;
 `
 
-const FlexColumn = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0 20px;
-  height: 90vh;
-  overflow-y: auto;
-`
 
 const TitleStyle = styled.h1`
   text-align: center;
   font-size: 1.2rem;
+
 `
 
 export default App;
