@@ -82,6 +82,7 @@ const HeroContainerStyle = styled.div`
 
 const HeroStyle = styled.div`
   height: 100px;
+  margin: 0 auto;
   img {
     height: 70px;
   }
@@ -101,7 +102,6 @@ const HeroSubContainerStyle = styled.div`
     max-width: 505px;
     width: 100%;
     flex-wrap: wrap;
-    max-height: 300px;
   `: `
     height: 900px;
   `}

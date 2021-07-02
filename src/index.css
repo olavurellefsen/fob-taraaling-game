@@ -10,7 +10,7 @@ div.menu .menu-item.tile.tile-centered {
 .menu.hero-list {
   z-index: inherit;
   transform: none;
-  min-height: 330px;
+  /* min-height: 330px; */
 }
 
 
