@@ -98,6 +98,7 @@ const HeroStyle = styled.div`
 const HeroSubContainerStyle = styled.div`
   display: flex;
   flex-direction: ${props => props.identifier};
+  align-items: center;
   max-width: 232px;
   width: 100%;
   flex-wrap: wrap;
