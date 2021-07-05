@@ -11,7 +11,7 @@ div.menu .menu-item.tile.tile-centered {
   z-index: inherit;
   transform: none;
   min-height: 330px;
-  max-height: 710px;
+  height: 710px;
 }
 
 

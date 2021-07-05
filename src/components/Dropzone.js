@@ -98,10 +98,10 @@ const HeroStyle = styled.div`
 const HeroSubContainerStyle = styled.div`
   display: flex;
   flex-direction: ${props => props.identifier};
+  max-width: 232px;
+  width: 100%;
+  flex-wrap: wrap;
   ${props => props.identifier === "row" ? `
-    max-width: 505px;
-    width: 100%;
-    flex-wrap: wrap;
   `: `
     height: 900px;
   `}
